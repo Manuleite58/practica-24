@@ -1,0 +1,19 @@
+// C++ code
+//
+#include <Servo.h>
+Servo miServo;
+int potenciometro = A0;
+int servoPin = 8;
+void setup()
+{
+ miServo.attach(servoPin);
+}
+
+
+void loop()
+{
+int pos= analogRead(servoPin);
+pos= map (pos, 0, 1023, 0, 180);
+ miServo.write (pos);
+ delay(15);
+}
